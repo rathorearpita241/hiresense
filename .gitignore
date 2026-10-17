@@ -1,0 +1,39 @@
+# --- secrets & local config ---
+.env
+.env.*
+!.env.example
+
+# --- Node ---
+node_modules/
+dist/
+build/
+coverage/
+npm-debug.log*
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- data & model artifacts (large and/or private; never commit) ---
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+!models/README.md
+*.joblib
+*.pkl
+
+# --- misc ---
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

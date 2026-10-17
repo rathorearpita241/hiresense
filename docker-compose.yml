@@ -1,0 +1,20 @@
+# Local development services. Start with:  docker compose up -d mongo
+# The Node, Python and React apps run directly on your machine during development.
+services:
+  mongo:
+    image: mongo:7
+    container_name: hiresense-mongo
+    restart: unless-stopped
+    # Bound to localhost only: this instance has no authentication and is for local dev.
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongo_data:

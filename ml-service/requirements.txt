@@ -1,0 +1,10 @@
+# Runtime dependencies. Lower bounds only: the exact versions that were tested are
+# recorded in requirements.lock.txt (generate it with `pip freeze` after your first
+# successful install + test run, then commit it so builds are reproducible).
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+joblib>=1.4
